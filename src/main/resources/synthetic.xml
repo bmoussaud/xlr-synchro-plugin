@@ -6,18 +6,26 @@
     FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 
 -->
-<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" 
-  xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd"
+           xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
- <type type="synchro.UpdateGate" extends="xlrelease.PythonScript">
-   <property name="iconLocation" default="synchro/icon.png" hidden="true" />
-   <property name="taskColor" hidden="true" default="#AA217E" />
-   <property name="gateTaskName" category="input" />
-   <property name="masterReleaseName" category="input" />
-   <property name="masterPhaseName" category="input"/>
-   <property name="masterTaskName" category="input"/>
-   <property name="addAConditionInTheMasterRelease" category="input" kind="boolean" default="true"/>
- </type>
+    <type type="synchro.UpdateGate" extends="xlrelease.PythonScript">
+        <property name="iconLocation" default="synchro/icon.png" hidden="true"/>
+        <property name="taskColor" hidden="true" default="#AA217E"/>
+        <property name="gateTaskName" category="input"/>
+        <property name="masterReleaseName" category="input"/>
+        <property name="masterPhaseName" category="input"/>
+        <property name="masterTaskName" category="input"/>
+        <property name="addAConditionInTheMasterRelease" category="input" kind="boolean" default="true"/>
+    </type>
+
+
+    <type type="synchro.StartSubReleases" extends="xlrelease.PythonScript">
+        <property name="iconLocation" default="synchro/icon.png" hidden="true"/>
+        <property name="taskColor" hidden="true" default="#AA217E"/>
+        <property name="subTasks" kind="map_string_string" category="input"/>
+        <property name="subTasksIds" kind="map_string_string" category="out"/>
+    </type>
 
 
 </synthetic>
