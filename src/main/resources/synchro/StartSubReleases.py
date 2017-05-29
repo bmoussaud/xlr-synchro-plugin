@@ -10,6 +10,7 @@ def new_variable_string(name, value):
     type = Type.valueOf('xlrelease.StringVariable')
     var = type.descriptor.newInstance(name)
     var.setValue(value)
+    var.setKey(name)
     print "* var %s" % var
     print "* var %s" % type
     return var
@@ -27,15 +28,14 @@ def resolve_template(template):
 def add_task(title, template):
     print "* Create a new task %s -> %s " % (title, template)
     phase = getCurrentPhase()
-    current_task = getCurrentTask()
-
+    
     task = taskApi.newTask("xlrelease.CreateReleaseTask")
     task.title = "Start {0}".format(title)
     task.newReleaseTitle = title
     task.templateId = resolve_template(template)
     task.startRelease = True
     task.releaseTags = set([title])
-    task.setTemplateVariables([new_variable_string('${LR}', getCurrentRelease().title)])
+    task.setTemplateVariables([new_variable_string('LR', getCurrentRelease().title)])
     taskApi.addTask(phase.id, task)
 
 
