@@ -28,7 +28,7 @@ def resolve_template(template):
 def add_task(title, template):
     print "* Create a new task %s -> %s " % (title, template)
     phase = getCurrentPhase()
-    
+
     task = taskApi.newTask("xlrelease.CreateReleaseTask")
     task.title = "Start {0}".format(title)
     task.newReleaseTitle = title

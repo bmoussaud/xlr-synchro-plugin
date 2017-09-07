@@ -22,7 +22,7 @@
 
     <type type="synchro.StartSubReleases" extends="xlrelease.PythonScript">
         <property name="iconLocation" default="synchro/icon.png" hidden="true"/>
-        <property name="taskColor" hidden="true" default="#AA217E"/>
+        <property name="taskColor" hidden="true" default="#68b749"/>
         <property name="subTasks" kind="map_string_string" category="input"/>
         <property name="subTasksIds" kind="map_string_string" category="out"/>
     </type>
